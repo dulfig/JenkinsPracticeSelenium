@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Building...'
                 bat 'mvn clean package'
-                archiveArtifacts artifacts: '**\target\*.jar'
+                archiveArtifacts artifacts: '**/target/*.jar'
             }
         }
         stage('Test') { 
@@ -13,7 +13,7 @@ pipeline {
                 echo 'Testing...'
                 bat 'mvn test -B'
                 bat 'make check || true'
-                junit '**\target\*.xml' 
+                junit '**/target/*.xml' 
             }
         }
         stage('Deploy') { 
