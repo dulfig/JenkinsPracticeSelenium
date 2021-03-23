@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo 'Building2...'
+                echo 'Building3...'
                 bat 'mvn clean package'
                 archiveArtifacts artifacts: '**/target/*.jar'
             }
