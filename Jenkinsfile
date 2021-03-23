@@ -4,15 +4,15 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building...'
-                sh 'mvn clean package -DskipTests'
+                bat 'mvn clean package -DskipTests'
                 archiveArtifacts artifacts: '**/target/*.jar'
             }
         }
         stage('Test') { 
             steps {
                 echo 'Testing...'
-                sh 'mvn test -B'
-                sh 'make check || true'
+                bat 'mvn test -B'
+                bat 'make check || true'
                 junit '**/target/*.xml' 
             }
         }
