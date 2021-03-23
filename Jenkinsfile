@@ -12,7 +12,6 @@ pipeline {
             steps {
                 echo 'Testing...'
                 bat 'mvn test -B'
-                bat 'make check || true'
                 junit '**/target/*.xml' 
             }
         }
@@ -23,4 +22,3 @@ pipeline {
         }
     }
 }
-//Adding some random comments
