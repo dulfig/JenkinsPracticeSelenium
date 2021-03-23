@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 echo 'Building...'
-                bat 'mvn clean package -DskipTests'
+                bat 'mvn clean package'
                 archiveArtifacts artifacts: '**/target/*.jar'
             }
         }
