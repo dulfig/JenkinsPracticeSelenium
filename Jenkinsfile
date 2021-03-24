@@ -12,7 +12,6 @@ pipeline {
             steps {
                 echo 'Testing...'
                 bat 'mvn test -B'
-                junit '**/target/*.xml' 
             }
         }
         stage('Deploy') { 
